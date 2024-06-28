@@ -1,0 +1,48 @@
+.
+├── README.md
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   └── _redirects
+├── src
+│   ├── App.css
+│   ├── App.jsx
+│   ├── assets
+│   ├── common
+│   │   └── API
+│   │       ├── apiKey.js
+│   │       ├── authApi.js
+│   │       ├── constants.js
+│   │       └── fetchApi.js
+│   ├── components
+│   │   ├── AboutUsPage
+│   │   ├── Breadcrumbs
+│   │   │   └── Breadcrumbs.jsx
+│   │   ├── ContactUsPage
+│   │   │   └── ContactUs.jsx
+│   │   ├── Footer
+│   │   │   └── Footer.jsx
+│   │   ├── Header
+│   │   │   └── Header.jsx
+│   │   ├── LoginPage
+│   │   │   ├── LoginForm.jsx
+│   │   │   └── LoginPage.jsx
+│   │   ├── RegisterPage
+│   │   │   ├── RegisterForm.jsx
+│   │   │   └── RegisterPage.jsx
+│   │   ├── Routing
+│   │   │   └── Routing.jsx
+│   │   ├── UserPage
+│   │   │   ├── MyVenues.jsx
+│   │   │   └── UserPage.jsx
+│   │   ├── VenueDetail
+│   │   │   └── VenueDetail.jsx
+│   │   └── VenueOverview
+│   │       ├── VenueCard.jsx
+│   │       └── VenueOverview.jsx
+│   └── main.jsx
+├── structure.txt
+└── vite.config.js
+
+18 directories, 28 files

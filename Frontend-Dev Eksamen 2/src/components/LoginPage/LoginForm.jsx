@@ -36,7 +36,7 @@ const LoginForm = () => {
       // Call the loginUser function to log in the user
       const response = await loginUser(email, password);
       console.log(
-        "Login API Response -np this is not common practise in reality, this is for school purposes:",
+        "Login API Response - this is not common practise in reality, this is for school purposes:",
         response
       ); // Log the API response for debugging
 
