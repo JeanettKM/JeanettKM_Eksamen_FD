@@ -3,7 +3,7 @@ import VenueCard from "./VenueCard";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import fetchApi from "../../common/API/fetchApi";
+import fetchApi from "../../common/API/fetchApi.js";
 import { InputGroup, Form, Button } from "react-bootstrap";
 
 const VenueOverview = () => {
