@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../common/API/config";
+import { API_BASE_URL } from "./constants.js";
 
 export const createApiKey = async (accessToken) => {
   try {
