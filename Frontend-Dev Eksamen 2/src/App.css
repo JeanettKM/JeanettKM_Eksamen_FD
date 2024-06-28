@@ -4,6 +4,20 @@ body {
   height: 100%;
 }
 
+#root {
+  height: 100%;
+}
+
+.parent {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.bg-color {
+  flex-grow: 1;
+}
+
 /* ContactUs.css */
 .container {
   flex-grow: 1; /* Ensure the container takes up remaining space */
