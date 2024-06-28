@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../API/AuthAPI";
+import { registerUser } from "../../common/API/authAPI.js";
 
 const RegisterForm = () => {
   // State variables
@@ -152,7 +152,7 @@ const RegisterForm = () => {
         {apiError && <Form.Text className="text-danger">{apiError}</Form.Text>}
 
         {/* Register btn */}
-        <Button variant="primary" type="submit">
+        <Button variant="primary" className="btn-hover" type="submit">
           Register
         </Button>
         <div>
@@ -162,7 +162,7 @@ const RegisterForm = () => {
           </Form.Text>
           {/* Login btn */}
           <Link to="/login">
-            <Button className="register-button" variant="primary">
+            <Button className="btn-hover register-button" variant="primary">
               Log in
             </Button>
           </Link>
@@ -174,7 +174,9 @@ const RegisterForm = () => {
       {registered && (
         <div className="popup">
           <p>Welcome to Holidaze, please log in with your new account!</p>
-          <Button onClick={handleLoginRedirect}>OK</Button>
+          <Button className="btn-hover" onClick={handleLoginRedirect}>
+            OK
+          </Button>
         </div>
       )}
     </div>

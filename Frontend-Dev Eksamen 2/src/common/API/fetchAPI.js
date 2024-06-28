@@ -1,5 +1,5 @@
 // FetchAPI.js
-import { API_BASE_URL } from "../API/config"; // Adjust the path as necessary
+import { API_BASE_URL } from "../../common/API/config.js";
 
 /**
  * FetchAPI function to handle API requests
@@ -9,7 +9,7 @@ import { API_BASE_URL } from "../API/config"; // Adjust the path as necessary
  * @returns {Promise<Object|null>} - The response data or null
  * @throws {Error} - Error message
  */
-const FetchAPI = async (endpoint, method = "GET", body = null) => {
+const fetchAPI = async (endpoint, method = "GET", body = null) => {
   // Retrieve access token and API key from localStorage
   const accessToken = localStorage.getItem("accessToken");
   const apiKey = localStorage.getItem("apiKey");
@@ -69,4 +69,4 @@ const FetchAPI = async (endpoint, method = "GET", body = null) => {
   return text ? JSON.parse(text) : {};
 };
 
-export default FetchAPI;
+export default fetchAPI;

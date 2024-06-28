@@ -1,4 +1,3 @@
-import React from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
@@ -40,7 +39,11 @@ function VenueCard({ venue }) {
         <ListGroup.Item>Price: {venue.price}</ListGroup.Item>
       </ListGroup>
       <Card.Body>
-        <Button variant="primary" onClick={handleReadMore}>
+        <Button
+          className="btn-hover"
+          variant="primary"
+          onClick={handleReadMore}
+        >
           Read More
         </Button>
       </Card.Body>

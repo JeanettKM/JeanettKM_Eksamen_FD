@@ -187,6 +187,10 @@ button,
   border-radius: 2px;
 }
 
+.btn-hover:hover {
+  background-color: #454545;
+  color: white;
+}
 .banner {
   width: 100%;
   margin-bottom: 20px; /* Adjust the margin as needed */

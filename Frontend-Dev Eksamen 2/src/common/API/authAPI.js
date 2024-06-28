@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../API/config";
+import { API_BASE_URL } from "../../common/API/config.js";
 
 /**
  * Registers a new user.

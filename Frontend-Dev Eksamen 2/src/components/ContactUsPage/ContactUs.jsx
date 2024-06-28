@@ -31,7 +31,10 @@ const ContactUs = () => {
                   rows="4"
                 ></textarea>
               </div>
-              <button type="submit" className="btn btn-primary sendMsgbtn">
+              <button
+                type="submit"
+                className="btn-hover btn btn-primary sendMsgbtn"
+              >
                 Send Message
               </button>
             </form>

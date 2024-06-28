@@ -1,4 +1,4 @@
-import { API_BASE_URL } from "../API/config";
+import { API_BASE_URL } from "../common/API/config";
 
 export const createApiKey = async (accessToken) => {
   try {
@@ -8,7 +8,7 @@ export const createApiKey = async (accessToken) => {
         "Content-Type": "application/json",
         Authorization: `Bearer ${accessToken}`,
       },
-      body: JSON.stringify({ name: "My API Key" }),
+      body: JSON.stringify({ name: "API Key" }),
     });
 
     if (!response.ok) {

@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import Calendar from "react-calendar";
-import FetchAPI from "../API/FetchAPI";
+import fetchAPI from "../../common/API/fetchAPI.js";
 import "react-calendar/dist/Calendar.css";
 
 const VenueDetail = () => {
@@ -19,7 +19,7 @@ const VenueDetail = () => {
   useEffect(() => {
     const fetchVenueData = async () => {
       try {
-        const data = await FetchAPI(`holidaze/venues/${id}`, "GET", {
+        const data = await fetchAPI(`holidaze/venues/${id}`, "GET", {
           _owner: true,
           _bookings: true,
         });
@@ -67,7 +67,7 @@ const VenueDetail = () => {
 
       console.log("Booking data being sent:", bookingData);
 
-      const response = await FetchAPI("holidaze/bookings", "POST", bookingData);
+      const response = await fetchAPI("holidaze/bookings", "POST", bookingData);
 
       if (response) {
         console.log("Booking successful!", response);
@@ -178,7 +178,7 @@ const VenueDetail = () => {
         </div>
         {bookingError && <p className="text-danger">{bookingError}</p>}
         {bookingSuccess && <p className="text-success">{bookingSuccess}</p>}
-        <Button variant="primary" onClick={handleBooking}>
+        <Button className="btn-hover" variant="primary" onClick={handleBooking}>
           Book Now
         </Button>
       </Card.Body>

@@ -9,7 +9,7 @@ import {
   Alert,
   Image,
 } from "react-bootstrap";
-import FetchAPI from "../API/FetchAPI";
+import fetchAPI from "../../common/API/fetchAPI.js";
 
 const UserPage = () => {
   const [userData, setUserData] = useState(null);
@@ -41,7 +41,7 @@ const UserPage = () => {
 
   const fetchUserProfile = async (profileName) => {
     try {
-      const userProfile = await FetchAPI(`holidaze/profiles/${profileName}`);
+      const userProfile = await fetchAPI(`holidaze/profiles/${profileName}`);
       setUserData(userProfile.data);
       fetchUserBookings(profileName);
     } catch (error) {
@@ -51,7 +51,7 @@ const UserPage = () => {
 
   const fetchUserBookings = async (profileName) => {
     try {
-      const bookings = await FetchAPI(
+      const bookings = await fetchAPI(
         `holidaze/profiles/${profileName}/bookings?_venue=true`,
         "GET"
       );
@@ -76,7 +76,7 @@ const UserPage = () => {
     };
 
     try {
-      const updatedProfile = await FetchAPI(
+      const updatedProfile = await fetchAPI(
         `holidaze/profiles/${profileName}`,
         "PUT",
         requestBody
@@ -117,7 +117,7 @@ const UserPage = () => {
     };
 
     try {
-      const response = await FetchAPI("holidaze/venues", "POST", requestBody);
+      const response = await fetchAPI("holidaze/venues", "POST", requestBody);
       setSuccess("Venue created successfully!");
       setVenueName("");
       setVenueLocation({ address: "", city: "", country: "" });
@@ -247,7 +247,7 @@ const ProfileUpdateForm = ({
         />
       </Form.Group>
       <div className="d-flex justify-content-center">
-        <Button type="submit" variant="primary" className="w-50">
+        <Button type="submit" variant="primary" className="w-50 btn-hover">
           Update Profile
         </Button>
       </div>
@@ -352,7 +352,7 @@ const VenueCreateForm = ({
         />
       </Form.Group>
       <div className="d-flex justify-content-center">
-        <Button type="submit" variant="primary" className="w-50">
+        <Button type="submit" variant="primary" className="btn-hover w-50">
           Create Venue
         </Button>
       </div>

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import { loginUser, createApiKey } from "../API/AuthAPI";
+import { loginUser, createApiKey } from "../../common/API/authAPI.js";
 
 const LoginForm = () => {
   // State variables for email, password, and error messages
@@ -35,7 +35,10 @@ const LoginForm = () => {
 
       // Call the loginUser function to log in the user
       const response = await loginUser(email, password);
-      console.log("Login API Response:", response); // Log the API response for debugging
+      console.log(
+        "Login API Response -np this is not common practise in reality, this is for school purposes:",
+        response
+      ); // Log the API response for debugging
 
       // Check if the response contains user data
       if (response && response.data && response.data.accessToken) {
@@ -110,13 +113,18 @@ const LoginForm = () => {
         <br />
 
         {/* Login btn */}
-        <Button variant="primary" type="button" onClick={handleLogin}>
+        <Button
+          className="btn-hover"
+          variant="primary"
+          type="button"
+          onClick={handleLogin}
+        >
           Log in
         </Button>
 
         {/* Register btn */}
         <Link to="/register">
-          <Button className="register-button" variant="primary">
+          <Button className="register-button btn-hover" variant="primary">
             Register
           </Button>
         </Link>

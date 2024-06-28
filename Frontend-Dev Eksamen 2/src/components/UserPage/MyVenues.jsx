@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import FetchAPI from "../API/FetchAPI";
+import fetchAPI from "../../common/API/fetchAPI.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const MyVenues = () => {
@@ -17,7 +17,7 @@ const MyVenues = () => {
       try {
         if (profileName) {
           // Fetch venues created with the currently logged in profile
-          const response = await FetchAPI(
+          const response = await fetchAPI(
             `holidaze/profiles/${profileName}/venues`
           );
           console.log("Fetched venues response:", response);
@@ -64,7 +64,7 @@ const MyVenues = () => {
 
     try {
       // Update the venue
-      const updatedVenue = await FetchAPI(
+      const updatedVenue = await fetchAPI(
         `holidaze/venues/${id}`,
         "PUT",
         requestBody
@@ -86,7 +86,7 @@ const MyVenues = () => {
   const handleDeleteClick = async (venueId) => {
     try {
       // Delete the venue
-      await FetchAPI(`holidaze/venues/${venueId}`, "DELETE");
+      await fetchAPI(`holidaze/venues/${venueId}`, "DELETE");
       console.log("Deleted venue:", venueId);
 
       // Remove the venue
