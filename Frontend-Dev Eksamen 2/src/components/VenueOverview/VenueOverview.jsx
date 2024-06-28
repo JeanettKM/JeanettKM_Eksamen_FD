@@ -3,11 +3,11 @@ import VenueCard from "./VenueCard";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import fetchApi from "../../common/API/fetchApi.js";
+import fetchApi from "../../common/API/fetchApi";
+
 import { InputGroup, Form, Button } from "react-bootstrap";
 
 const VenueOverview = () => {
-  // State variables
   const [venues, setVenues] = useState([]);
   const [displayedVenues, setDisplayedVenues] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
@@ -18,7 +18,6 @@ const VenueOverview = () => {
     loadVenues();
   }, []);
 
-  // Load venues from the API
   const loadVenues = async () => {
     try {
       const data = await fetchApi("holidaze/venues");
