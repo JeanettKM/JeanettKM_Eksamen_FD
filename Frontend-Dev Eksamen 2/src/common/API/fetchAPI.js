@@ -9,7 +9,7 @@ import { API_BASE_URL } from "./constants.js";
  * @returns {Promise<Object|null>} - The response data or null
  * @throws {Error} - Error message
  */
-const fetchAPI = async (endpoint, method = "GET", body = null) => {
+const fetchApi = async (endpoint, method = "GET", body = null) => {
   // Retrieve access token and API key from localStorage
   const accessToken = localStorage.getItem("accessToken");
   const apiKey = localStorage.getItem("apiKey");
@@ -69,4 +69,4 @@ const fetchAPI = async (endpoint, method = "GET", body = null) => {
   return text ? JSON.parse(text) : {};
 };
 
-export default fetchAPI;
+export default fetchApi;

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
-import { registerUser } from "../../common/API/authAPI.js";
+import { registerUser } from "../../common/API/authApi.js";
 
 const RegisterForm = () => {
   // State variables

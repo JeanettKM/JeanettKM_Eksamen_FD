@@ -9,7 +9,7 @@ import {
   Alert,
   Image,
 } from "react-bootstrap";
-import fetchAPI from "../../common/API/fetchAPI.js";
+import fetchApi from "../../common/API/fetchApi.js";
 
 const UserPage = () => {
   const [userData, setUserData] = useState(null);
@@ -41,7 +41,7 @@ const UserPage = () => {
 
   const fetchUserProfile = async (profileName) => {
     try {
-      const userProfile = await fetchAPI(`holidaze/profiles/${profileName}`);
+      const userProfile = await fetchApi(`holidaze/profiles/${profileName}`);
       setUserData(userProfile.data);
       fetchUserBookings(profileName);
     } catch (error) {
@@ -51,7 +51,7 @@ const UserPage = () => {
 
   const fetchUserBookings = async (profileName) => {
     try {
-      const bookings = await fetchAPI(
+      const bookings = await fetchApi(
         `holidaze/profiles/${profileName}/bookings?_venue=true`,
         "GET"
       );
@@ -76,7 +76,7 @@ const UserPage = () => {
     };
 
     try {
-      const updatedProfile = await fetchAPI(
+      const updatedProfile = await fetchApi(
         `holidaze/profiles/${profileName}`,
         "PUT",
         requestBody
@@ -117,7 +117,7 @@ const UserPage = () => {
     };
 
     try {
-      const response = await fetchAPI("holidaze/venues", "POST", requestBody);
+      const response = await fetchApi("holidaze/venues", "POST", requestBody);
       setSuccess("Venue created successfully!");
       setVenueName("");
       setVenueLocation({ address: "", city: "", country: "" });

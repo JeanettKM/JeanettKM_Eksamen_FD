@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import { Link } from "react-router-dom";
-import { loginUser, createApiKey } from "../../common/API/authAPI.js";
+import { loginUser, createApiKey } from "../../common/API/authApi.js";
 
 const LoginForm = () => {
   // State variables for email, password, and error messages

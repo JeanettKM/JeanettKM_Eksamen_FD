@@ -3,7 +3,7 @@ import VenueCard from "./VenueCard";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import fetchAPI from "../../common/API/fetchAPI.js";
+import fetchApi from "../../common/API/fetchApi.js";
 import { InputGroup, Form, Button } from "react-bootstrap";
 
 const VenueOverview = () => {
@@ -21,7 +21,7 @@ const VenueOverview = () => {
   // Load venues from the API
   const loadVenues = async () => {
     try {
-      const data = await fetchAPI("holidaze/venues");
+      const data = await fetchApi("holidaze/venues");
       console.log("Fetched venues data:", data);
       if (data && Array.isArray(data.data)) {
         setVenues(data.data);
@@ -43,7 +43,7 @@ const VenueOverview = () => {
     }
 
     try {
-      const data = await fetchAPI(`holidaze/venues/search?q=${searchQuery}`);
+      const data = await fetchApi(`holidaze/venues/search?q=${searchQuery}`);
       console.log("Searched venues data:", data);
       if (data && Array.isArray(data.data)) {
         setDisplayedVenues(data.data.slice(0, itemsPerPage));
